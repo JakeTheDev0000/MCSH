@@ -1,11 +1,16 @@
 import sys,os,time
 import CMD_LIST
 
-MCSH_VER = "0.1.2"
+from rich.console import Console
+console = Console()
 
+
+
+MCSH_VER = "0.1.4"
 
 def main():
     while True:
+        console.print(os.system("pwd"), style="red bold")
         command = str(input("MCSH >"))
         for terms in CMD_LIST.echo:
             if command.split(" ")[0] == terms:
@@ -25,6 +30,7 @@ def main():
                 pass
             pass
 
+
         for terms in CMD_LIST.mkdir:
             if command.split(" ")[0] == terms:
                 dirname = command.split(" ")[1]
@@ -41,10 +47,19 @@ def main():
                 os.system(filename)
                 pass
             pass
+
         for terms in CMD_LIST.help:
             if command.split(" ")[0] == terms:
                 print(CMD_LIST.CMD_LIST_DEFINE_NONDICT)
                 pass
+            pass
+        
+        for terms in CMD_LIST.ls:
+            if command.split(" ")[0] == terms:
+                os.system("ls")
+
+
+
 
     pass
 

@@ -42,3 +42,9 @@ help = {
     "h",
     "MCSH_HELP"
 }
+
+ls = {
+    "ls",
+    "dir"
+    "list"
+}
