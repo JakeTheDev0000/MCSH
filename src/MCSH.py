@@ -2,6 +2,7 @@ import sys,os,time
 import CMD_LIST
 
 from rich.console import Console
+
 console = Console()
 
 
@@ -10,8 +11,10 @@ MCSH_VER = "0.1.4"
 
 def main():
     while True:
-        console.print(os.system("pwd"), style="red bold")
-        command = str(input("MCSH >"))
+        print("\n")
+        os.system("pwd")
+        command = str(console.input("[red b i reverse] MCSH [/] >"))
+
         for terms in CMD_LIST.echo:
             if command.split(" ")[0] == terms:
                 print(command.split(" ")[1])
@@ -57,6 +60,15 @@ def main():
         for terms in CMD_LIST.ls:
             if command.split(" ")[0] == terms:
                 os.system("ls")
+        
+        for terms in CMD_LIST.cd:
+            if command.split(" ")[0] == terms:
+                try:
+                    print(command.split(" ")[1])
+                    os.chdir(command.split(" ")[1])
+                except:
+                    print("Current Directory:")
+                    os.system("pwd")
 
 
 
@@ -64,5 +76,5 @@ def main():
     pass
 
 if __name__ == '__main__':
-    print("MessyCode Shell (C) 2022 9/9/22\nVersion: ",MCSH_VER)
+    console.print("MessyCode Shell, built on top of BASH (C) 2022 9/9/22\nVersion: ",MCSH_VER, style="bold white on blue", justify="center")
     main()

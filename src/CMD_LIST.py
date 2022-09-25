@@ -19,7 +19,8 @@ exit = {
     "exit",
     "close",
     "finish",
-    "goHome"
+    "goHome",
+    "e"
 }
 
 mkdir = {
@@ -47,4 +48,9 @@ ls = {
     "ls",
     "dir"
     "list"
+}
+
+cd = {
+    "cd",
+    "ChangeDir"
 }
