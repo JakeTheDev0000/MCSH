@@ -111,5 +111,5 @@ def main():
     pass
 
 if __name__ == '__main__':
-    console.print("MessyCode Shell (MCSH), built on top of BASH\nVersion: ",MCSH_VER, style="bold white on blue", justify="center")
+    console.print("NaRSH (Not a Real Shell), built on top of BASH\nVersion: ",MCSH_VER, style="bold white on blue", justify="center")
     main()
